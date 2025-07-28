@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         set
         {
             _isMoving = value;
-            animator.SetBool("isMoving", value);
+            animator.SetBool(AnimationStrings.isMoving, value);
 
         }
     }
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         set
         {
             _isRunning = value;
-            animator.SetBool("isRunning", value);
+            animator.SetBool(AnimationStrings.isRunning, value);
         }
     }
 
@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
             //Face the right
             IsFacingRight = true;
         }
-        else if (moveInput.x < 0 && !IsFacingRight)
+        else if (moveInput.x < 0 && IsFacingRight)
         {
             //Face the left
             IsFacingRight = false;
