@@ -122,6 +122,11 @@ namespace Meryel.UnityCodeAssist.Editor
                 data.ParameterHashes[i] = parameter.nameHash.ToString();
                 data.ParameterTypes[i] = (int)parameter.type;
             }
+            for (int i = 0; i < animator.parameterCount; i++)
+            {
+                var param = animator.GetParameter(i);
+                // Do something with param
+            }
 
             // When you specify a state name, or the string used to generate a hash, it should include the name of the parent layer. For example, if you have a Bounce state in the Base Layer, the name is Base Layer.Bounce
             // The name should be in the form Layer.Name or Layer.SubStateMachine.Name

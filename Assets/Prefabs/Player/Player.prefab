@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.81439, y: -0.17854, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -132,11 +132,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487f5db2bbdfaa74cb146000de7e1667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
+  walkSpeed: 10
   runSpeed: 500
+  jumpImpulse: 8
   _isMoving: 0
-  _isRunning: 0
+  _isRunning: 1
   _isFacingRight: 1
+  rb: {fileID: 7980752963322960749}
+  animator: {fileID: 8186835031338210234}
+  touchingDirections: {fileID: 6630280453875882607}
 --- !u!114 &3421918037639686073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +258,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d29ddd4c-a52d-4aef-8b2f-ccf2b6ec1a8d
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2993576153363145854}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: 48422dfd-82c7-4fea-8afb-d75065ba6f16
+    m_ActionName: 'Player/Jump[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -330,3 +350,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34809ef4a21b8624887cb0c2742dc835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  castFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  groundDistance: 0.5
+  wallDistance: 0.2
+  ceilingDistance: 0.5
+  _isGrounded: 1
+  _isOnWall: 0
+  _isOnCeiling: 1
